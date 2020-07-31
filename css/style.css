@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.conteudo{
+    border-radius: 15px;
+    background-color: white;
+    width: 960px;
+    height: 50%;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+   
+}
+
+.conteudo::before{
+    content: "";
+    position: absolute;
+    background-color: purple;
+    width: 45%;
+    height: 100%;
+    left: 0px;
+    border-radius: 15px;
+
+
+    left: 0;
+}
+
+.title-primeira{
+    color:palevioletred;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.title-segunda{
+    color: purple;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+.descricao{
+    font-size: 14px;
+    font-weight: 300;
+    line-height:30px ;
+}
+
+.descricao-primeiro{
+    color: white;
+}
+
+.descricao-segunda{
+    color: purple;
+    
+}
+
+.btn{
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 160px;
+    align-self: center;
+    margin-top: 1rem 0;
+}
+
+.btn-entrar{
+    background: transparent;
+    border: 1px solid palevioletred;
+    transition: background-color -2s;
+}
+
+.btn-inscrever{
+    background-color:purple;
+    border: 1px solid palevioletred;
+    transition: background-color -2s;
+    
+}
+
+.btn-entrar:hover{
+    background-color: white;
+    color: purple;
+}
+
+.btn-inscrever:hover{
+    background-color: white;
+    border: 1px solid purple;
+    color:purple;
+    
+}
+
+.primeiro-conteudo{
+    display: flex;
+    
+}
+
+.primeiro-conteudo .segunda-coluna{
+    z-index: 11;
+}
+
+.primeira-coluna{
+    text-align: center;
+    flex: 1 0 auto;
+    z-index:10 ;
+    
+}
+
+.segunda-coluna{
+    flex: 2 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lista-social-midia{
+    display: flex;
+    list-style: none;
+}
+
+
+.item-social-midia{
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+
+.item-social-midia:not(:first-child){
+    margin-left: 10px;
+}
+
+.item-social-midia a {
+    color: #95a5a6;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    
+
+}
+
+.form input{
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: #ecf0f1;
+    
+}
+
+.label-input{
+    background-color:#ecf0f1 ;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.icone-input{
+    color: #7f8c8d;
+    padding: 0 5px ;
+}
+
+/*segundo conteudo*/
+
+.segundo-conteudo{
+    position: absolute;
+    display:flex ;
+}
+
+.segundo-conteudo .primeira-coluna{
+    order: 2;
+    z-index: -1;
+}
+
+.segundo-conteudo .segunda-coluna{
+    order: 1;
+    z-index: -1;
+}
+
+.esqueci-senha{
+    color: royalblue;
+    font-size: 14px;
+    margin: 15px 0; 
+    text-align: center;
+}
+
+.esqueci-senha::first-letter{
+    text-transform: capitalize;
+    
+}
+
+.sign-in-js .primeiro-conteudo .primeira-coluna{
+
+    z-index: -1;
+}
+
+.sign-in-js .segundo-conteudo .segunda-coluna{
+    z-index: 11;
+}
+
+.sign-in-js .segundo-conteudo .primeira-coluna{
+    z-index: 13;
+}
+
+
+.sign-in-js .conteudo::before{
+    left: 60%;
+    animation: slidein 1s;
+
+    z-index: 12;
+}
+
+.sign-up-js .conteudo::before{
+    animation: slideout 1s;
+
+    z-index: 12;
+}
+
+.sign-up-js .segundo-conteudo .primeira-coluna,
+.sign-up-js .segundo-conteudo .segunda-coluna{
+    z-index: -1;
+}
+
+.sign-up-js .primeiro-conteudo .segunda-coluna{
+    z-index: 11;
+}
+
+.sign-up-js .primeiro-conteudo .primeira-coluna{
+    z-index: 13;
+}
+
+
+/*DESLOCAMENTO CONTEÚDO ATRÁS DO CONTEUDO-BEFORE */
+.sign-in-js .primeiro-conteudo .segunda-coluna{
+    z-index: -1;
+   
+    animation: deslocamento 2s;
+}
+
+
+/*ANIMAÇÃO CSS PARA CONTEUDO*/
+
+@keyframes deslocamento{
+
+    from{
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    25%{
+        left: -88px;
+        opacity: .2;
+    }
+
+    50%{
+        left: -100px;
+        opacity: .2;
+    }
+
+    to{
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/*ANIMAÇÃO CSS*/
+
+@keyframes slidein{
+
+from{
+    left: 0;
+    width: 40%;
+}
+
+25%{
+    left: 5%;
+    width: 50%;
+}
+
+50%{
+    left: 25%;
+    width: 60%;
+}
+
+75%{
+    left: 45%;
+    width: 50%;
+}
+
+to{
+    left: 60%;
+    width:40% ;
+}
+}
+
+@keyframes slideout{
+
+    from{
+        left: 60%;
+        width: 40%;
+    }
+    
+    25%{
+        left: 45%;
+        width: 50%;
+    }
+    
+    50%{
+        left: 25%;
+        width: 60%;
+    }
+    
+    75%{
+        left: 5%;
+        width: 50%;
+    }
+    
+    to{
+        left: 0%;
+        width:40% ;
+    }
+
+}
